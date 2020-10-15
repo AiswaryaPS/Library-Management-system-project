@@ -1,4 +1,5 @@
-#include<library.h>
+#include<contact.h>
+
 int login(char user[10],char pass[10])
 {
 	int k;
@@ -20,7 +21,7 @@ int login(char user[10],char pass[10])
 	    i++;
 	}
 	pword[i]='\0';*/
-	scanf("%9s", &pword);
+	scanf("%9s", pword);
 
 	//i=0;
 
