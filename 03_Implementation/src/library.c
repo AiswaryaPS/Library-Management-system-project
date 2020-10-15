@@ -1,7 +1,7 @@
 #include<library.h>
 int login(char user[10],char pass[10])
 {
-	int a=0,i=0,k;
+	int k;
     char uname[10];
     char pword[10],code[10];
 
@@ -22,7 +22,7 @@ int login(char user[10],char pass[10])
 	pword[i]='\0';*/
 	scanf("%9s", &pword);
 
-	i=0;
+	//i=0;
 
     	//if((uname=="user")&&(pword=="pass"))
 	//if((uname,"user")==0 && strcmp(pword,"pass")==0)
