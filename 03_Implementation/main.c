@@ -75,7 +75,7 @@ void mainmenu(void)
 			    	list_book();
 				break;
 				case 3:
-				search_book);
+				search_book();
 				break;
                 		case 4:
 				edit_book();
