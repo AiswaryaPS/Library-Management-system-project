@@ -1,5 +1,5 @@
-#include<contact.h>
-struct contact
+#include<library.h>
+struct book
 
 {
 
@@ -25,7 +25,7 @@ void main()
 	if(n==1)
     {
 
-        printf("  \n\n\n       WELCOME TO CONTACT MANAGEMENT SYSTEM !!!! LOGIN IS SUCCESSFUL");
+        printf("  \n\n\n       WELCOME TO LIBRARY MANAGEMENT SYSTEM !!!! LOGIN IS SUCCESSFUL");
         printf("\n\n\n\t\t\t\tPress any key to continue...");
         //getch();
         mainmenu();
@@ -69,19 +69,19 @@ void mainmenu(void)
 		switch(choice)
 			{
 				case 1:
-				add_contact();
+				add_book();
 				break;
 				case 2:
-			    	list_contact();
+			    	list_book();
 				break;
 				case 3:
-				search_contact();
+				search_book);
 				break;
                 		case 4:
-				edit_contact();
+				edit_book();
 				break;
 				case 5:
-				delete_contact();
+				delete_book();
 				case 6:
 				exit(0);
 				break;
@@ -96,9 +96,9 @@ void mainmenu(void)
 
 
 
-/* *********************Add new contacts************  */
+/* *********************Add new book************  */
 
-    void add_contact()
+    void add_book()
     {
 
             char answer;
