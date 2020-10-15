@@ -4,12 +4,12 @@ struct book
 {
 
 
-    char name[20],add[60],email[30],ph[20];
+    char name[50],add[80],email[50],ph[20];
     char answer;
 
 } list;
 
-char query[20],name[20];
+char query[50],name[50];
 
 FILE *fp, *ft;
 
@@ -96,7 +96,7 @@ void mainmenu(void)
 
 
 
-/* *********************Add new contacts************  */
+/* *********************Add new books************  */
 
     void add_book()
     {
@@ -111,14 +111,14 @@ void mainmenu(void)
 
             printf("\nFullName :");
 
-            scanf("%[^\n]",list.name);
+            scanf("%49[^\n]s",list.name);
 
             fflush(stdin);
 
             printf("Phone:");
 
             //gets(list.ph);
-	    scanf("%s",list.ph);
+	    scanf("%19s",list.ph);
 
 
 
@@ -128,14 +128,14 @@ void mainmenu(void)
 
             printf("address:");
 
-            scanf("%[^\n]",list.add);
+            scanf("%79[^\n]s",list.add);
 
             fflush(stdin);
 
             printf("email address:");
 
            // gets(list.email);
-	    scanf("%s",list.email);
+	    scanf("%49s",list.email);
 
             printf("\n");
 
@@ -143,13 +143,13 @@ void mainmenu(void)
 
             fclose(fp);
 
-            printf("\n\t\t Do you want to add another contact?[Y/N]:");
+            printf("\n\t\t Do you want to add another book?[Y/N]:");
 
             scanf("%s",&answer);
 
             /*while(toupper(answer)!='Y'&& toupper(answer)!='N')
             {
-                printf("Invalid!\n\tDo you want to add another contact?[Y/N]:");
+                printf("Invalid!\n\tDo you want to add another book?[Y/N]:");
                 scanf("%s",&answer);
             }*/
             if((answer=='Y')||(answer=='y'))
@@ -167,7 +167,7 @@ void mainmenu(void)
 
 
 
-        /* *********************list of contacts*************************  */
+        /* *********************list of books*************************  */
 
     void list_book()
     {
@@ -233,11 +233,11 @@ void mainmenu(void)
             system("cls");
             found=0;
 
-            printf("\n\n\t..::book SEARCH\n\t===========================\n\t..::Name of book to search: ");
+            printf("\n\n\t..::BOOK SEARCH\n\t===========================\n\t..::Name of book to search: ");
 
             fflush(stdin);
 
-            scanf("%[^\n]",query);
+            scanf("%49[^\n]s",query);
 
             l=strlen(query);
 
@@ -329,7 +329,7 @@ void mainmenu(void)
 
         printf("..::Edit book\n===============================\n\n\t..::Enter the name of book to edit:");
 
-        scanf("%[^\n]",name);
+        scanf("%49[^\n]s",name);
 
         while(fread(&list,sizeof(list),1,fp)==1)
 
@@ -348,7 +348,7 @@ void mainmenu(void)
 
         printf("..::Name(Use identical):");
 
-        scanf("%[^\n]",list.name);
+        scanf("%49[^\n]s",list.name);
 
         fflush(stdin);
 
@@ -363,7 +363,7 @@ void mainmenu(void)
 
         printf("..::address:");
 
-        scanf("%[^\n]",list.add);
+        scanf("%79[^\n]s",list.add);
 
         fflush(stdin);
 
@@ -388,7 +388,7 @@ void mainmenu(void)
 
         printf("\n\t\t Do you want to edit another book?[Y/N]:");
 
-	    scanf("%s",&answer);
+	    scanf("%2s",&answer);
 
         /*while(toupper(answer)!='Y'&& toupper(answer)!='N')
         {
@@ -419,7 +419,7 @@ void delete_book()
 
         printf("\n\n\t..::DELETE A BOOK\n\t==========================\n\t..::Enter the name of book to delete:");
 
-        scanf("%[^\n]",name);
+        scanf("%49[^\n]s",name);
 
         fp=fopen("book.txt","r");
 
@@ -443,7 +443,7 @@ void delete_book()
 
         printf("\n\t\t Do you want to delete another book?[Y/N]:");
 
-	    scanf("%s",&answer);
+	    scanf("%2s",&answer);
 
         /*while(toupper(answer)!='Y'&& toupper(answer)!='N')
         {
