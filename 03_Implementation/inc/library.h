@@ -13,11 +13,11 @@
 
 int login();
 void mainmenu();
-void add_contact();
-void delete_contact();
-void edit_contact();
-void search_contact();
-void list_contact();
+void add_book();
+void delete_book();
+void edit_book();
+void search_book();
+void list_book();
 
 
-#endif // CONTACT_H_INCLUDED
+#endif // 
