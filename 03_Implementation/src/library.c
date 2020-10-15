@@ -26,7 +26,7 @@ int login(char user[10],char pass[10])
 
     	//if((uname=="user")&&(pword=="pass"))
 	//if((uname,"user")==0 && strcmp(pword,"pass")==0)
-	if(strcasecmp(uname,"user")==0 && strcasecmp(pword,"pass")==0)
+	if((strcasecmp(uname,"user")==0 && strcasecmp(pword,"pass")==0)||(strcasecmp(user,"user")==0 && strcasecmp(pass,"pass")==0))
 	{
 	k=1;
 
