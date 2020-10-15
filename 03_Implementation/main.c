@@ -105,7 +105,7 @@ void mainmenu(void)
 
             system("cls");
 
-            fp=fopen("contact.txt","a");
+            fp=fopen("book.txt","a");
 
             fflush(stdin);
 
@@ -143,19 +143,19 @@ void mainmenu(void)
 
             fclose(fp);
 
-            printf("\n\t\t Do you want to add another contact?[Y/N]:");
+            printf("\n\t\t Do you want to add another book?[Y/N]:");
 
             scanf("%2s",&answer);
 
             /*while(toupper(answer)!='Y'&& toupper(answer)!='N')
             {
-                printf("Invalid!\n\tDo you want to add another contact?[Y/N]:");
+                printf("Invalid!\n\tDo you want to add another book?[Y/N]:");
                 scanf("%s",&answer);
             }*/
             if((answer=='Y')||(answer=='y'))
 
             {
-                add_contact();
+                add_book();
             }
 
             else
@@ -167,9 +167,9 @@ void mainmenu(void)
 
 
 
-        /* *********************list of contacts*************************  */
+        /* *********************list of books*************************  */
 
-    void list_contact()
+    void list_book()
     {
         char answer;
         system("cls");
@@ -180,7 +180,7 @@ void mainmenu(void)
 
         {
 
-            fp=fopen("contact.txt","r");
+            fp=fopen("book.txt","r");
 
             fflush(stdin);
 
@@ -222,9 +222,9 @@ void mainmenu(void)
 
     }
 
-        /* *******************search contacts**********************  */
+        /* *******************search book**********************  */
 
-    void search_contact()
+    void search_book()
     {
 
 
@@ -233,7 +233,7 @@ void mainmenu(void)
             system("cls");
             found=0;
 
-            printf("\n\n\t..::CONTACT SEARCH\n\t===========================\n\t..::Name of contact to search: ");
+            printf("\n\n\t..::BOOK SEARCH\n\t===========================\n\t..::Name of book to search: ");
 
             fflush(stdin);
 
@@ -241,7 +241,7 @@ void mainmenu(void)
 
             l=strlen(query);
 
-            fp=fopen("contact.txt","r");
+            fp=fopen("book.txt","r");
 
             system("cls");
 
@@ -292,18 +292,18 @@ void mainmenu(void)
 
             fclose(fp);
 
-            printf("\n\t\t Do you want to  search another contact ?[Y/N]:");
+            printf("\n\t\t Do you want to  search another book ?[Y/N]:");
 
             scanf("%2s",&answer);
 
             /*while(toupper(answer)!='Y'&& toupper(answer)!='N')
             {
-                printf("Invalid!\n\tDo you want to search another contact?[Y/N]:");
+                printf("Invalid!\n\tDo you want to search another book?[Y/N]:");
                 scanf("%s",&answer);
             }*/
             if((answer=='Y')||(answer=='y'))
             {
-                search_contact();
+                search_book();
             }
             else
             {
@@ -314,20 +314,20 @@ void mainmenu(void)
 
     }
 
-        /* *********************edit contacts************************/
+        /* *********************edit book************************/
 
- void edit_contact()
+ void edit_book()
 
  {      char answer;
         system("cls");
 
-        fp=fopen("contact.txt","r");
+        fp=fopen("book.txt","r");
 
         ft=fopen("temp.txt","w");
 
         fflush(stdin);
 
-        printf("..::Edit contact\n===============================\n\n\t..::Enter the name of contact to edit:");
+        printf("..::Edit book\n===============================\n\n\t..::Enter the name of book to edit:");
 
         scanf("%49[^\n]s",name);
 
@@ -380,13 +380,13 @@ void mainmenu(void)
 
         fclose(ft);
 
-        remove("contact.txt");
+        remove("book.txt");
 
-        rename("temp.txt","contact.txt");
+        rename("temp.txt","book.txt");
 
 
 
-        printf("\n\t\t Do you want to edit another contact?[Y/N]:");
+        printf("\n\t\t Do you want to edit another book?[Y/N]:");
 
 	    scanf("%2s",&answer);
 
@@ -397,7 +397,7 @@ void mainmenu(void)
         }*/
        if((answer=='Y')||(answer=='y'))
         {
-            edit_contact();
+            edit_book();
         }
         else
         {
@@ -410,18 +410,18 @@ void mainmenu(void)
 
 
 
-void delete_contact()
+void delete_book()
 {
         char answer;
         system("cls");
 
         fflush(stdin);
 
-        printf("\n\n\t..::DELETE A CONTACT\n\t==========================\n\t..::Enter the name of contact to delete:");
+        printf("\n\n\t..::DELETE A BOOK\n\t==========================\n\t..::Enter the name of book to delete:");
 
         scanf("%49[^\n]s",name);
 
-        fp=fopen("contact.txt","r");
+        fp=fopen("book.txt","r");
 
         ft=fopen("temp.txt","w");
 
@@ -434,14 +434,14 @@ void delete_contact()
 
         fclose(ft);
 
-        remove("contact.txt");
+        remove("book.txt");
 
-        rename("temp.txt","contact.txt");
+        rename("temp.txt","book.txt");
 
 
-        printf("contact successfully deleted!!!");
+        printf("book successfully deleted!!!");
 
-        printf("\n\t\t Do you want to delete another contact?[Y/N]:");
+        printf("\n\t\t Do you want to delete another book?[Y/N]:");
 
 	    scanf("%2s",&answer);
 
@@ -452,7 +452,7 @@ void delete_contact()
         }*/
         if((answer=='Y')||(answer=='y'))
         {
-            delete_contact();
+            delete_book();
         }
         else
         {
